@@ -7,16 +7,21 @@
 }
 
 :root {
-    --primary-red: #D2122E; /* Vermelho intenso inspirado na logo Ironman */
+    --primary-red: #D2122E;
     --dark-red: #8B0000;
-    --light-gray: #f4f4f4;
-    --white: #ffffff;
-    --text-dark: #222;
+
+    /* Tema escuro */
+    --bg-dark: #121212;
+    --card-dark: #1E1E1E;
+    --card-hover: #2A2A2A;
+    --text-light: #F5F5F5;
+    --text-secondary: #B0B0B0;
+    --border-color: #333;
 }
 
 body {
-    background-color: var(--light-gray);
-    color: var(--text-dark);
+    background-color: var(--bg-dark);
+    color: var(--text-light);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -25,12 +30,12 @@ body {
 }
 
 .container {
-    background-color: var(--white);
+    background-color: var(--card-dark);
     max-width: 800px;
     width: 100%;
     padding: 40px;
     border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
     border-top: 8px solid var(--primary-red);
     text-align: center;
 }
@@ -45,7 +50,7 @@ header h1 {
 
 header h2 {
     font-size: 1.5rem;
-    color: var(--dark-red);
+    color: #ff6b6b;
     margin-bottom: 20px;
     font-weight: 400;
 }
@@ -54,7 +59,7 @@ header h2 {
     font-size: 1.1rem;
     line-height: 1.6;
     margin-bottom: 40px;
-    color: #555;
+    color: var(--text-secondary);
 }
 
 /* Estilização da Lista Horizontal */
@@ -78,27 +83,27 @@ header h2 {
     display: block;
     padding: 15px 25px;
     background-color: var(--primary-red);
-    color: var(--white);
+    color: var(--text-light);
     text-decoration: none;
     font-weight: bold;
     text-transform: uppercase;
     border-radius: 50px;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(210, 18, 46, 0.3);
+    box-shadow: 0 4px 15px rgba(210, 18, 46, 0.4);
 }
 
 .horizontal-list li a:hover {
     background-color: var(--dark-red);
     transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(139, 0, 0, 0.4);
+    box-shadow: 0 6px 20px rgba(139, 0, 0, 0.6);
 }
 
 footer {
     margin-top: 50px;
     padding-top: 20px;
-    border-top: 1px solid #eee;
+    border-top: 1px solid var(--border-color);
     font-size: 0.9rem;
-    color: #777;
+    color: var(--text-secondary);
 }
 
 footer strong {
@@ -111,7 +116,7 @@ footer strong {
         flex-direction: column;
         gap: 10px;
     }
-    
+
     header h1 {
         font-size: 2rem;
     }
