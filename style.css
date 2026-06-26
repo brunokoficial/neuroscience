@@ -1,4 +1,6 @@
-/* Reset básico para garantir consistência entre navegadores */
+/* ==========================
+   RESET
+========================== */
 * {
     margin: 0;
     padding: 0;
@@ -6,122 +8,243 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* ==========================
+   VARIÁVEIS
+========================== */
 :root {
     --primary-red: #D2122E;
     --dark-red: #8B0000;
 
-    /* Tema escuro */
     --bg-dark: #121212;
     --card-dark: #1E1E1E;
     --card-hover: #2A2A2A;
+
     --text-light: #F5F5F5;
     --text-secondary: #B0B0B0;
+
     --border-color: #333;
 }
 
+/* ==========================
+   BODY
+========================== */
 body {
-    background-color: var(--bg-dark);
+    background: var(--bg-dark);
     color: var(--text-light);
+
     display: flex;
     justify-content: center;
     align-items: center;
+
     min-height: 100vh;
     padding: 20px;
 }
 
+/* ==========================
+   CONTAINER
+========================== */
 .container {
-    background-color: var(--card-dark);
-    max-width: 800px;
+    background: var(--card-dark);
+
     width: 100%;
+    max-width: 900px;
+
     padding: 40px;
+    margin: 40px 0;
+
     border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
     border-top: 8px solid var(--primary-red);
+
+    box-shadow: 0 10px 30px rgba(0,0,0,.6);
+
+    text-align: left;
+}
+
+/* ==========================
+   CABEÇALHO
+========================== */
+header {
     text-align: center;
+    margin-bottom: 40px;
 }
 
 header h1 {
-    font-size: 3rem;
     color: var(--primary-red);
+    font-size: 3rem;
     letter-spacing: 4px;
-    margin-bottom: 10px;
     text-transform: uppercase;
+    margin-bottom: 10px;
 }
 
 header h2 {
-    font-size: 1.5rem;
     color: #ff6b6b;
-    margin-bottom: 20px;
+    font-size: 1.4rem;
     font-weight: 400;
+    margin-bottom: 20px;
 }
 
+/* ==========================
+   TÍTULOS
+========================== */
+h3 {
+    color: var(--primary-red);
+    font-size: 1.8rem;
+
+    margin: 30px 0 15px;
+
+    border-left: 4px solid var(--primary-red);
+    padding-left: 15px;
+
+    text-transform: uppercase;
+}
+
+/* ==========================
+   TEXTOS
+========================== */
 .description {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    margin-bottom: 40px;
     color: var(--text-secondary);
+
+    font-size: 1.05rem;
+    line-height: 1.8;
+
+    margin-bottom: 30px;
+
+    text-align: justify;
 }
 
-/* Estilização da Lista Horizontal */
+/* ==========================
+   LISTAS DE CONTEÚDO
+========================== */
+.benefits-list,
+.distances-list {
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+.benefits-list li,
+.distances-list li {
+    background: rgba(255,255,255,.03);
+
+    margin-bottom: 12px;
+    padding: 15px;
+
+    border-radius: 8px;
+    border-left: 3px solid var(--primary-red);
+
+    transition: .3s;
+}
+
+.benefits-list li:hover,
+.distances-list li:hover {
+    background: var(--card-hover);
+}
+
+.benefits-list li strong,
+.distances-list li strong {
+    color: #ff6b6b;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* ==========================
+   MENU HORIZONTAL
+========================== */
 #modalidades {
-    margin: 30px 0;
+    text-align: center;
+    margin: 40px 0 30px;
 }
 
 .horizontal-list {
-    list-style: none;
     display: flex;
     justify-content: center;
     gap: 20px;
-    padding: 0;
+
+    list-style: none;
 }
 
 .horizontal-list li {
     flex: 1;
+    min-width: 150px;
 }
 
 .horizontal-list li a {
     display: block;
+
     padding: 15px 25px;
-    background-color: var(--primary-red);
-    color: var(--text-light);
+
+    text-align: center;
     text-decoration: none;
-    font-weight: bold;
     text-transform: uppercase;
+    font-weight: bold;
+
+    color: var(--text-light);
+
+    background: var(--primary-red);
+
     border-radius: 50px;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(210, 18, 46, 0.4);
+
+    transition: .3s;
+
+    box-shadow: 0 4px 15px rgba(210,18,46,.4);
 }
 
 .horizontal-list li a:hover {
-    background-color: var(--dark-red);
+    background: var(--dark-red);
+
     transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(139, 0, 0, 0.6);
+
+    box-shadow: 0 6px 20px rgba(139,0,0,.6);
 }
 
+/* ==========================
+   LINKS ESPECIAIS
+========================== */
+a#bruno {
+    color: var(--dark-red);
+}
+
+/* ==========================
+   RODAPÉ
+========================== */
 footer {
-    margin-top: 50px;
+    text-align: center;
+
+    margin-top: 40px;
     padding-top: 20px;
+
     border-top: 1px solid var(--border-color);
-    font-size: 0.9rem;
+
     color: var(--text-secondary);
+    font-size: .9rem;
 }
 
 footer strong {
     color: var(--primary-red);
 }
 
-/* Responsividade para telas menores */
+/* ==========================
+   RESPONSIVIDADE
+========================== */
 @media (max-width: 600px) {
+
+    .container {
+        padding: 20px;
+    }
+
+    header h1 {
+        font-size: 2.2rem;
+    }
+
+    header h2 {
+        font-size: 1.2rem;
+    }
+
     .horizontal-list {
         flex-direction: column;
         gap: 10px;
     }
 
-    header h1 {
-        font-size: 2rem;
+    .horizontal-list li {
+        min-width: auto;
     }
-    
-}
-a#bruno{
-    color:var(--dark-red);
 }
