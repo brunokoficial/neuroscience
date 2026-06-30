@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Acesso - Triatlo</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>BEM-VINDO</h1>
+            <h2>Identifique-se para continuar</h2>
+        </header>
+
+        <main class="login-form">
+            <div class="input-group">
+                <label for="nome">Qual o seu nome?</label>
+                <input type="text" id="nome" placeholder="Digite seu nome aqui" required>
+            </div>
+            
+            <div class="input-group">
+                <label for="idade">Qual a sua idade?</label>
+                <input type="number" id="idade" placeholder="Digite sua idade" required>
+            </div>
+
+            <nav id="modalidades">
+                <ul class="horizontal-list">
+                    <li><a href="#" onclick="salvarAcesso(event)">Prosseguir</a></li>
+                </ul>
+            </nav>
+        </main>
+
+        <footer>
+            <p>Acesse o portal do Triatlo</p>
+        </footer>
+    </div>
+
+    <script>
+        function salvarAcesso(event) {
+            event.preventDefault();
+            const nome = document.getElementById('nome').value;
+            const idade = document.getElementById('idade').value;
+
+            if (nome && idade) {
+                // Salva no localStorage para usar na página index.html
+                localStorage.setItem('usuarioNome', nome);
+                localStorage.setItem('usuarioIdade', idade);
+                
+                // Redireciona para a página principal
+                window.location.href = 'index.html';
+            } else {
+                alert('Por favor, preencha seu nome e idade.');
+            }
+        }
+    </script>
+</body>
+</html>
